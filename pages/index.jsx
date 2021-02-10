@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Header from '../components/Header';
 
 const users = [
   { id: 1, name: 'James' },
@@ -8,22 +9,10 @@ const users = [
 
 function Home() {
   return (
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      <li>
-        {users.map((user) => (
-          <ul key={user.id}>
-            <Link href={`/user/${encodeURIComponent(user.id)}`}>
-              <a>{user.name}</a>
-            </Link>
-          </ul>
-        ))}
-      </li>
-    </ul>
+    <>
+      <Header />
+      <h1>About page</h1>
+    </>
   );
 }
 
